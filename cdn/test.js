@@ -1,1 +1,3 @@
-console.log('githubbbb')
+
+var tttest = function(){
+console.log('githubbbb')};
