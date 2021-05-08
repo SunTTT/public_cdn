@@ -117,7 +117,7 @@ function isStop(){
        numbers = numbers.replace('第','')
        numbers = numbers.replace('题','')
        console.log(`开始第${numbers}题`)
-       if(parseInt(numbers)===20){
+       if(parseInt(numbers)===101){
            return true
        }else{
            return false
@@ -141,6 +141,6 @@ return;
     console.log(answers)
     performClick(answers)
     check()
-    setInterval(function(){ answer(); }, 2000);
+    setTimeout(function(){ answer(); }, 2000);
 }
 answer()
