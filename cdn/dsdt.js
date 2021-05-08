@@ -2,6 +2,7 @@ var tiku = [{ "title": "1998年6月中旬至9月上旬，（ ）流域发生历�
 
 
 
+
 function selectItem(indexArray) {
     indexArray.forEach(element => {
         $(`.test-option #${element}`).click()
@@ -9,7 +10,8 @@ function selectItem(indexArray) {
 
 }
 function filterTitle() {
-    return $('#show_title').text().trim()
+    // return $('#show_title').text().trim()
+    return $('.test-question p').text().trim()
 }
 function filterOptions() {
     var optionObj = {}
@@ -26,34 +28,34 @@ function filterOptions() {
     //     optionObj.E = $('#q_opt5').text().trim().split('.')[1]
     // }
 
-
-    if($('ul').html().match('A\\..*')){
+var ulhtml = $('ul').html().replace(/\r\n/g,'').replace('/\n/g','').replace(/\s/g,"")
+    if(ulhtml.match('A\\..*?</p>')){
         //去除</p>
-        var A = $('ul').html().match('A\\..*')[0].trim().split('.')[1]
+        var A = ulhtml.match('A\\..*?</p>')[0].trim().split('.')[1]
         A = A.replace("</p>",'')
         optionObj.A = A
     }
 
-    if($('ul').html().match('B\\..*')){
-       var B = $('ul').html().match('B\\..*')[0].trim().split('.')[1]
+    if(ulhtml.match('B\\..*?</p>')){
+       var B = ulhtml.match('B\\..*?</p>')[0].trim().split('.')[1]
        B = B.replace("</p>",'')
        optionObj.B = B
     }
 
-    if($('ul').html().match('C\\..*')){
-        var C = $('ul').html().match('C\\..*')[0].trim().split('.')[1]
+    if(ulhtml.match('C\\..*?</p>')){
+        var C = ulhtml.match('C\\..*?</p>')[0].trim().split('.')[1]
         C = C.replace("</p>",'')
         optionObj.C = C
     }
 
-    if($('ul').html().match('D\\..*')){
-        var D =  $('ul').html().match('D\\..*')[0].trim().split('.')[1]
+    if(ulhtml.match('D\\..*?</p>')){
+        var D =  ulhtml.match('D\\..*?</p>')[0].trim().split('.')[1]
         D = D.replace("</p>",'')
         optionObj.D =  D
     }
 
-    if($('ul').html().match('E\\..*')){
-        var E =  $('ul').html().match('E\\..*')[0].trim().split('.')[1]
+    if(ulhtml.match('E\\..*?</p>')){
+        var E =  ulhtml.match('E\\..*?</p>')[0].trim().split('.')[1]
         E = E.replace("</p>",'')
         optionObj.E = E
     }
