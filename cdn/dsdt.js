@@ -28,23 +28,34 @@ function filterOptions() {
 
 
     if($('ul').html().match('A\\..*')){
-        optionObj.A = $('ul').html().match('A\\..*')[0].trim().split('.')[1]
+        //去除</p>
+        var A = $('ul').html().match('A\\..*')[0].trim().split('.')[1]
+        A = A.replace("</p>",'')
+        optionObj.A = A
     }
 
     if($('ul').html().match('B\\..*')){
-        optionObj.B = $('ul').html().match('B\\..*')[0].trim().split('.')[1]
+       var B = $('ul').html().match('B\\..*')[0].trim().split('.')[1]
+       B = B.replace("</p>",'')
+       optionObj.B = B
     }
 
     if($('ul').html().match('C\\..*')){
-        optionObj.C = $('ul').html().match('C\\..*')[0].trim().split('.')[1]
+        var C = $('ul').html().match('C\\..*')[0].trim().split('.')[1]
+        C = C.replace("</p>",'')
+        optionObj.C = C
     }
 
     if($('ul').html().match('D\\..*')){
-        optionObj.D = $('ul').html().match('D\\..*')[0].trim().split('.')[1]
+        var D =  $('ul').html().match('D\\..*')[0].trim().split('.')[1]
+        D = D.replace("</p>",'')
+        optionObj.D =  D
     }
 
     if($('ul').html().match('E\\..*')){
-        optionObj.E = $('ul').html().match('E\\..*')[0].trim().split('.')[1]
+        var E =  $('ul').html().match('E\\..*')[0].trim().split('.')[1]
+        E = E.replace("</p>",'')
+        optionObj.E = E
     }
     return optionObj
 }
@@ -67,6 +78,7 @@ function transClickAnswer(array, optionArray) {
         Object.keys(optionArray).forEach(key => {
             
             if (ele === optionArray[key]) {
+                console.log()
                 selectAnswerArray.push(key)
             }
         })
@@ -92,15 +104,19 @@ function performClick(answerArray){
         // if(ele === "E"){
         //     target = '#q_opt5'
         // }
-        $(`.test-option #${ele}`).get(0).click()
+        console.log('click option',`.test-option #${ele}`)
+        $(`.test-option #${ele}`).click()
     })
     return target
 }
 
 function answer(){
     var title = filterTitle()
+    console.log('title',title)
     var options = filterOptions()
+    console.log('options',options)
     var selectTimu = selectTargetFromTiku(title)
+    console.log('selectTimu',selectTimu)
     var answers = transClickAnswer(selectTimu.ans,options)
     console.log(answers)
     performClick(answers)
