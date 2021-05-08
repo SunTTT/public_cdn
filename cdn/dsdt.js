@@ -78,7 +78,7 @@ function transClickAnswer(array, optionArray) {
     array.forEach(ele => {
         Object.keys(optionArray).forEach(key => {
             
-            if (ele === optionArray[key]) {
+            if (ele.replace(' ','') === optionArray[key]) {
                 console.log()
                 selectAnswerArray.push(key)
             }
