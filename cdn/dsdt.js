@@ -111,7 +111,26 @@ function performClick(answerArray){
     return target
 }
 
+function isStop(){
+   if($('.test-number').text().trim()) {
+       var numbers = $('.test-number').text().trim()
+       numbers = numbers.replace('第','')
+       numbers = numbers.replace('题','')
+       console.log(`开始第${numbers}题`)
+       if(parseInt(numbers)===100){
+           return true
+       }else{
+           return false
+       }
+   }else{
+       console.log('获取题目数量失败')
+       return false
+   }
+}
 function answer(){
+    if(isStop){
+return;
+    }
     var title = filterTitle()
     console.log('title',title)
     var options = filterOptions()
