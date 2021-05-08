@@ -128,7 +128,7 @@ function isStop(){
    }
 }
 function answer(){
-    if(isStop){
+    if(isStop()){
 return;
     }
     var title = filterTitle()
