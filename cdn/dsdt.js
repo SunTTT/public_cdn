@@ -128,9 +128,9 @@ function isStop(){
    }
 }
 function answer(){
-    if(isStop()){
-return;
-    }
+//     if(isStop()){
+// return;
+//     }
     var title = filterTitle()
     console.log('title',title)
     var options = filterOptions()
@@ -141,6 +141,9 @@ return;
     console.log(answers)
     performClick(answers)
     check()
-    setTimeout(function(){ answer(); }, 2000);
+    let random1 = Math.round(Math.random()*1000+1000)
+    let random2 = Math.round(Math.random()*1000+1000)
+    console.log(`${random1+random2}秒后开始答下一题`)
+    setTimeout(function(){ answer(); }, random1+random2);
 }
 answer()
