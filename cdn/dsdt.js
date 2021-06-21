@@ -18,7 +18,7 @@ function selectItem(indexArray) {
 function filterTitle() {
     // return $('#show_title').text().trim()
     // return $('.test-question p').text().trim().replace(/（ *?）/g,'（ ）')
-    return _question_obj.title.trim().replace(/（ *?）/g,'（ ）')
+    return _question_obj.title.trim().replace(/（.*?）/g,'（ ）')
 }
 function filterOptions() {
     var optionObj = {}
