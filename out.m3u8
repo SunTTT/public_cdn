@@ -1,0 +1,16 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-ALLOW-CACHE:YES
+#EXT-X-TARGETDURATION:16
+#EXTINF:15.036000,
+https://img3.zhanqi.tv/anchor_idcard/104781611/xoET_74f17ec510c8a431159b46b048978efc.png
+#EXTINF:15.000000,
+https://img3.zhanqi.tv/anchor_idcard/104781611/9k6U_a9c040fd728e2be25ba847731eed642b.png
+#EXTINF:15.000000,
+https://img3.zhanqi.tv/anchor_idcard/104781611/BCZl_1d1b72a07187668c0a3915a13222f08d.png
+#EXTINF:15.000000,
+https://img3.zhanqi.tv/anchor_idcard/104781611/mFD1_4da73000a6c5ef2dab6d13cee4179f25.png
+#EXTINF:5.285711,
+https://img3.zhanqi.tv/anchor_idcard/104781611/gYxP_1c4bc2bfad1c1d8a9b412066dc89d967.png
+#EXT-X-ENDLIST
